@@ -21,7 +21,7 @@ struct ContentView: View {
 
 struct LottieAnimation: UIViewRepresentable{
     
-    let name: String = "bricks"
+    let name: String = "factory"
     
     func makeUIView(context: Context) -> some UIView {
         
