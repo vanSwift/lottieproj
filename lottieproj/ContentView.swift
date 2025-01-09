@@ -10,14 +10,12 @@ import Lottie
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            LottieAnimation()
-        }
-        .padding()
+            VStack {
+                LottieAnimation()
+                Lottie2Animation()
+            }
+            
+        
     }
 }
 
@@ -50,6 +48,40 @@ struct LottieAnimation: UIViewRepresentable{
     }
     
 }
+
+
+
+
+struct Lottie2Animation: UIViewRepresentable{
+    
+    let name: String = "guy"
+    
+    func makeUIView(context: Context) -> some UIView {
+        
+        let view = UIView()
+        let animationView = LottieAnimationView(name: name)
+        animationView.loopMode = .autoReverse
+        animationView.play()
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(animationView)
+        
+        NSLayoutConstraint.activate([
+            animationView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            animationView.widthAnchor.constraint(equalTo: view.widthAnchor)
+        ])
+        
+        return view
+        
+    }
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        let view = UIView()
+        
+    }
+    
+}
+
 
 
 #Preview {
